@@ -27,13 +27,14 @@ int main(){
         int index = 0;
         while(getline(infile, in)){
             words[index] = in;
+            index++;
             b.addNode(in);
             l.addNode(in);
         }
         
     }
     infile.close();
-    
+    //cout << b.printData() << endl;
     srand((unsigned) time(0));
     
     for(int i = 0; i < 200; i++){
@@ -44,9 +45,10 @@ int main(){
             if(printed[randnum] == false){
                 //cout << randnum << endl;
                 //if(l.find(words[randnum]) || b.isStored(words[randnum])){
-                    bool sl = l.find(words[randnum]);
-                    bool sb = b.isStored(words[randnum]);
-                    cout << l.getOpps() << " : " << b.getOpps() << endl;
+                //cout << words[randnum] << endl;
+                bool sl = l.find(words[randnum]);
+                bool sb = b.isStored(words[randnum]);
+                cout << randnum << ";" << l.getOpps() << ";" << b.getOpps() << endl;
                 //}                
                 printed[randnum] = true;
                 busy = false;
