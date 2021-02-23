@@ -12,7 +12,7 @@ LinkedList::LinkedList(){
 
 void LinkedList::addNode(std::string in){
     node *tmp = new node;
-    tmp->name = in;
+    tmp->data = in;
     tmp->next = NULL;
     
     if(head == NULL){
@@ -36,7 +36,7 @@ std::string LinkedList::printNode(int index){
         count++;        
     }
     
-    out = read.name;
+    out = read.data;
     
     return out;
 }
@@ -46,7 +46,7 @@ bool LinkedList::find(std::string in){
     bool contains = false;
     
     struct node read = *head;
-    while(read.next != NULL){
+    while(contains == false && read.next != NULL){
         opps++;
         if(read.data.compare(in) == 0){
             contains = true;

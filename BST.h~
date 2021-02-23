@@ -8,9 +8,11 @@ class BST{
          node *root;
          string out;
          void printData(node *start);
+         int opps;
     public:
         BST();
         void addNode(string d);
         bool isStored(string d);
+        int getOpps();
         string printData();
 };

@@ -2,8 +2,8 @@
 
 using namespace std;
 
-struct node{
-    struct node *left;
-    struct node *right;
+struct nodeB{
+    struct nodeB *left;
+    struct nodeB *right;
     string data;
 };

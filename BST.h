@@ -5,9 +5,9 @@ using namespace std;
 
 class BST{
     private:
-         node *root;
+         nodeB *root;
          string out;
-         void printData(node *start);
+         void printData(nodeB *start);
          int opps;
     public:
         BST();

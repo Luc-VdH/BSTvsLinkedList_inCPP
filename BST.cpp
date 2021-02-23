@@ -10,7 +10,7 @@ BST::BST(){
 }
 
 void BST::addNode(std::string d){
-    node *tmp = new node;
+    nodeB *tmp = new nodeB;
     tmp->data = d;
     tmp->right = NULL;
     tmp->left = NULL;
@@ -18,7 +18,7 @@ void BST::addNode(std::string d){
     if(root == NULL){
         root = tmp;
     }else{
-         node *current = root;
+         nodeB *current = root;
         bool unstored = true;
         
         while(unstored){
@@ -46,15 +46,15 @@ bool BST::isStored(string d){
     bool stored = false;
     bool search = true;
     opps = 0;
-    struct node current = *root;
+    struct nodeB current = *root;
     
     while(search){
-        opps++
+        opps++;
         if(current.data.compare(d) == 0){
             stored = true;
             search = false;
         }else{
-            opps++
+            opps++;
             if(current.data.compare(d) > 0){
                 if(current.right == NULL){
                     search = false;
@@ -74,7 +74,7 @@ bool BST::isStored(string d){
     return stored;
 }
 
-void BST::printData(node *start){
+void BST::printData(nodeB *start){
     if(start != NULL){
         out = out + start->data + "\n";
         printData(start->left);

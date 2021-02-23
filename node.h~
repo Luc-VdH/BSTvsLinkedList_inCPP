@@ -4,5 +4,5 @@ using namespace std;
 
 struct node{
     struct node *next;
-    string data;
+    string name;
 };

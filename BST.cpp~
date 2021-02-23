@@ -6,6 +6,7 @@ using namespace std;
 BST::BST(){
     root = NULL;
     out = "";
+    opps = 0;
 }
 
 void BST::addNode(std::string d){
@@ -44,13 +45,16 @@ void BST::addNode(std::string d){
 bool BST::isStored(string d){
     bool stored = false;
     bool search = true;
+    opps = 0;
     struct node current = *root;
     
     while(search){
+        opps++;
         if(current.data.compare(d) == 0){
             stored = true;
             search = false;
         }else{
+            opps++;
             if(current.data.compare(d) > 0){
                 if(current.right == NULL){
                     search = false;
@@ -86,6 +90,10 @@ std::string BST::printData(){
     out = "";
     printData(root);
     return out;
+}
+
+int BST::getOpps(){
+    return opps;
 }
 
 
